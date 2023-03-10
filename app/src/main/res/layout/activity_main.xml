@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#ADD8E6">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:src="@drawable/icon"
+        android:id="@+id/image_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_icon"
+        android:text="NIRAMAYA"
+        android:textSize="30sp"
+        android:textColor="#E73232"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        style="@style/CustomFontStyle"
+        android:textStyle="bold"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_user_login"
+        android:text="User login"
+        android:layout_marginTop="400dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:elevation="20sp"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_professional_login"
+        android:text="Professional login"
+        android:layout_below="@+id/btn_user_login"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:elevation="20sp"/>
+    <TextView
+        android:id="@+id/txt_register_from_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_professional_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Not Registered! Register Here"
+        android:textColor="@color/black"/>
+
+</RelativeLayout>

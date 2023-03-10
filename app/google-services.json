@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "531986869984",
+    "project_id": "niramaya-health-f0375",
+    "storage_bucket": "niramaya-health-f0375.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531986869984:android:61e44c53e670b2e5f42a85",
+        "android_client_info": {
+          "package_name": "com.example.niramaya_health"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531986869984-p7khrptvuqs2o0jc9udc4hhetedg23bt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKR86fW0DcOUBlB-ZFC9i5tLN9R_Souv0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531986869984-p7khrptvuqs2o0jc9udc4hhetedg23bt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
