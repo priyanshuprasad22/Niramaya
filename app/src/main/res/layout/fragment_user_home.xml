@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User_home">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                style="@style/CustomFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Welcome to Niramaya"
+                android:textColor="@color/purple_200"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="Thank you for choosing Niramaya!\nLet's get started on your journey towards a healthier you."
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#9C27B0"
+                android:text="Update Profile"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/linear_doctors">
+
+                    <ImageView
+                        android:layout_width="205dp"
+                        android:layout_height="200dp"
+                        android:src="@drawable/imagedoc" />
+
+                    <TextView
+                        android:layout_width="205dp"
+                        android:layout_height="wrap_content"
+                        android:text="Search Doctors"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/linear_medicine">
+
+                    <ImageView
+                        android:layout_width="205dp"
+                        android:layout_height="200dp"
+                        android:src="@drawable/medicine" />
+
+                    <TextView
+                        android:layout_width="205dp"
+                        android:layout_height="wrap_content"
+                        android:text="Find Medicine"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/linear_insurance">
+
+                    <ImageView
+                        android:layout_width="205dp"
+                        android:layout_height="200dp"
+                        android:src="@drawable/insurance" />
+
+                    <TextView
+                        android:layout_width="205dp"
+                        android:layout_height="wrap_content"
+                        android:text="Find Insurance"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/linear_test">
+
+                    <ImageView
+                        android:layout_width="205dp"
+                        android:layout_height="200dp"
+                        android:src="@drawable/test" />
+
+                    <TextView
+                        android:layout_width="205dp"
+                        android:layout_height="wrap_content"
+                        android:text="Find lab test"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Your Feed"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/userfeed_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginRight="25dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Upcoming Appointments"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/userappoint_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginRight="25dp" />
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</FrameLayout>

@@ -5,37 +5,35 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
-import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class Activity_professional extends AppCompatActivity {
+public class User_Activity extends AppCompatActivity {
 
     ActionBarDrawerToggle actionBarDrawerToggle;
     DrawerLayout drawerLayout;
 
     TabLayout tabLayout;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_professional2);
+        setContentView(R.layout.activity_user);
+
 
         tabLayout=findViewById(R.id.tool_bar);
 
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
-        tabLayout.addTab(tabLayout.newTab().setText("Patients"));
+        tabLayout.addTab(tabLayout.newTab().setText("Symptom"));
         tabLayout.addTab(tabLayout.newTab().setText("Upcoming\nSessions"));
+        tabLayout.addTab(tabLayout.newTab().setText("See\nTimeline"));
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.user_view_pager);
+        PagerAdapterUser adapter = new PagerAdapterUser(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
 

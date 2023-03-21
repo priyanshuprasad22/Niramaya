@@ -91,7 +91,7 @@
         android:layout_below="@+id/edt_mobile"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:hint="Registry Number"
+        android:hint="Registration Number"
         android:layout_centerHorizontal="true"
         android:background="@color/white"
         android:textSize="20sp"
@@ -110,7 +110,8 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:textSize="20sp"
-        android:background="@color/white" />
+        android:background="#9C27B0"
+        android:textColor="@color/white"/>
 
 
 

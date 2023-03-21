@@ -31,7 +31,7 @@
         android:id="@+id/edt_email_login"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:hint="email"
+        android:hint="Email"
         android:background="@color/white"
         android:layout_below="@+id/txt_appname"
         android:layout_centerHorizontal="true"
@@ -41,7 +41,7 @@
         android:id="@+id/edt_password_login"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:hint="password"
+        android:hint="Password"
         android:background="@color/white"
         android:layout_below="@+id/edt_email_login"
         android:layout_centerHorizontal="true"
@@ -50,14 +50,16 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submit_login"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:text="Submit"
+        android:text="Sign In"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/edt_password_login"
-        android:background="#F46363"
+        android:background="#9C27B0"
         android:textStyle="bold"
         android:textSize="20dp"
+        android:textColor="@color/white"
+        android:padding="5dp"
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

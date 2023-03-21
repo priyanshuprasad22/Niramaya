@@ -5,29 +5,34 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class MyPagerAdapter extends FragmentPagerAdapter {
+public class PagerAdapterUser extends FragmentPagerAdapter {
 
-    public MyPagerAdapter(FragmentManager fm) {
+
+    public PagerAdapterUser(FragmentManager fm) {
         super(fm);
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch (position) {
+        switch (position){
             case 0:
-                return new Home_Page();
+                return new User_home();
             case 1:
-                return new Patient_List();
+                return new User_Symptoms();
             case 2:
-                return new Upcoming_appointment();
+                return new User_appoint();
+            case 3:
+                return new user_timeline();
             default:
                 return null;
+
+
         }
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }

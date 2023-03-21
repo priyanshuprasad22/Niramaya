@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Patient_full_medical_detail">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Patient Details -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Patient Details"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: John Doe" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: 12345" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact: 555-1234" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: john.doe@example.com" />
+
+            <!-- Medical Information -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Medical Information"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Symptoms:" />
+
+            <EditText
+                android:id="@+id/edt_patientlist_symptom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Symptoms"
+                android:enabled="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Basic Medical Parameters:" />
+
+            <EditText
+                android:id="@+id/edt_patientlist_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Height"
+                android:enabled="false"/>
+
+            <EditText
+                android:id="@+id/edt_patientlist_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Weight"
+                android:enabled="false"/>
+
+            <EditText
+                android:id="@+id/edt_patientlist_bloodpressure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Blood Pressure" />
+
+            <EditText
+                android:id="@+id/edt_patientlist_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="O2 Level"
+                android:enabled="false" />
+
+            <!-- Button to redirect to Past Medical Data -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="View Past Medical Data"
+                android:layout_gravity="center"/>
+
+            <!-- Medication Input and Advices -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Medication Input and Advices"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_patientlist_advice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Medication Input and Advices"
+                android:minLines="5"
+                android:enabled="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Follow-Up Date"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_patientlist_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select Follow-Up Date"
+                android:inputType="date"
+                android:enabled="false"/>
+
+            <Button
+                android:id="@+id/btn_update_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:onClick="onEnableButtonClick"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

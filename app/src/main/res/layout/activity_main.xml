@@ -54,7 +54,16 @@
         android:layout_below="@+id/btn_professional_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="Not Registered! Register Here"
+        android:text="Click to Register as Medical Professonal"
+        android:textColor="@color/black" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_register_from_login_user"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txt_register_from_login"
+        android:layout_marginTop="10dp"
+        android:text="Click to Register as User"
         android:textColor="@color/black"/>
 
 </RelativeLayout>

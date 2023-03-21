@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ADD8E6"
+    tools:context=".user_registration">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/icon"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIRAMAYA"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:textColor="#E73232"
+            style="@style/CustomFontStyle"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please enter your basic details carefully to register on NIRAMAYA platform"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:textColor="#9C27B0"
+            android:padding="10dp"/>
+
+        <EditText
+            android:id="@+id/edt_user_name"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:hint="Name"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:padding="5dp"/>
+        <EditText
+            android:id="@+id/edt_user_email"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:hint="Email"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:background="@color/white"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"/>
+        <EditText
+            android:id="@+id/edt_user_password"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:hint="Password"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:background="@color/white"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:inputType="textPassword"/>
+        <EditText
+            android:id="@+id/edt_user_number"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:hint="Phone Number"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:background="@color/white"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:inputType="number"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_user_register"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Register"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:background="#9C27B0"
+            android:textColor="@color/white"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

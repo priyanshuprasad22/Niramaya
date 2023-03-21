@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var register:TextView
     private lateinit var btn_professional:Button
+    private lateinit var user_register:TextView
+    private lateinit var btn_user:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         register=findViewById(R.id.txt_register_from_login)
         btn_professional=findViewById(R.id.btn_professional_login)
+        user_register=findViewById(R.id.txt_register_from_login_user)
+        btn_user=findViewById(R.id.btn_user_login)
+
+
 
 
         register.setOnClickListener {
@@ -27,6 +33,15 @@ class MainActivity : AppCompatActivity() {
 
         btn_professional.setOnClickListener {
             val intent=Intent(this,professional_login_activity::class.java)
+            startActivity(intent)
+        }
+
+        user_register.setOnClickListener {
+            val intent=Intent(this,user_registration::class.java)
+            startActivity(intent)
+        }
+        btn_user.setOnClickListener {
+            val intent=Intent(this,user_login::class.java)
             startActivity(intent)
         }
 

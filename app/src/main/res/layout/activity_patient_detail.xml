@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Patient_detail">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Information"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:id="@+id/text_info"/>
+
+
+    <TextView
+        android:layout_below="@+id/text_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/patient_name"
+        android:layout_marginTop="20dp"
+        android:text="Your Name"
+        android:textSize="20dp"
+        android:background="@color/cardview_dark_background"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/edt_patient_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@+id/patient_name"
+        android:background="@color/cardview_dark_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/patient_age"
+        android:layout_marginTop="20dp"
+        android:text="Your age"
+        android:textSize="20dp"
+        android:background="@color/cardview_dark_background"
+        android:textColor="@color/white"
+        android:layout_below="@+id/edt_patient_name"/>
+
+    <EditText
+        android:id="@+id/edt_patient_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@+id/patient_age"
+        android:background="@color/cardview_dark_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/patient_number"
+        android:layout_marginTop="20dp"
+        android:text="Your Number"
+        android:textSize="20dp"
+        android:layout_below="@+id/edt_patient_age"
+        android:background="@color/cardview_dark_background"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/edt_patient_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@id/patient_number"
+        android:background="@color/cardview_dark_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/patient_address"
+        android:layout_marginTop="20dp"
+        android:text="Your Address"
+        android:textSize="20dp"
+        android:layout_below="@+id/edt_patient_number"
+        android:background="@color/cardview_dark_background"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/edt_patient_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@id/patient_address"
+        android:background="@color/cardview_dark_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/patient_email"
+        android:layout_marginTop="20dp"
+        android:text="Your email"
+        android:textSize="20dp"
+        android:layout_below="@+id/edt_patient_address"
+        android:background="@color/cardview_dark_background"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/edt_patient_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@id/patient_email"
+        android:background="@color/cardview_dark_background"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/update_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UPDATE"
+        android:layout_below="@id/edt_patient_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="30dp"/>
+
+
+
+</RelativeLayout>

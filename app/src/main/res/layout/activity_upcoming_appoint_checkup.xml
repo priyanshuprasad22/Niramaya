@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Patient_full_medical_detail">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Patient Details -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Patient Details"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: John Doe" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: 12345" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact: 555-1234" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: john.doe@example.com" />
+
+            <!-- Medical Information -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Medical Information"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Symptoms:" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Symptoms" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Basic Medical Parameters:" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Height" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Weight" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Blood Pressure" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="O2 Level" />
+
+            <!-- Button to redirect to Past Medical Data -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="View Past Medical Data"
+                android:layout_gravity="center"/>
+
+            <!-- Medication Input and Advices -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Medication Input and Advices"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Medication Input and Advices"
+                android:minLines="5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Follow-Up Date"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/follow_up_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Follow-up date"
+                android:checked="false"/>
+
+            <EditText
+                android:id="@+id/follow_up_date_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Follow-Up Date : Format - DD-MM-YYYY"
+                android:inputType="text"
+                android:visibility="gone"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:background="@color/purple_500"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

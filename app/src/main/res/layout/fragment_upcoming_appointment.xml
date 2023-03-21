@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Patient_List">
+    tools:context=".Upcoming_appointment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -11,22 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Note : The given list indicates the patient the you have checked."
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:padding="5dp"
+            android:text="Note : The given list consists of the patient that have booked for new appointment"
             android:background="@color/white"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
             android:textColor="#F12525"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/recycler_patient_list"
+            android:id="@+id/recycler_upcoming_appointment"
             android:layout_marginTop="10dp"/>
-
 
     </LinearLayout>
 
