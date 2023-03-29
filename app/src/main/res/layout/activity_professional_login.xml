@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".professional_login_activity"
-    android:background="#ADD8E6">
+    android:background="@drawable/all_back">
 
     <ImageView
         android:id="@+id/image_logo_icon"
@@ -13,7 +13,7 @@
         android:layout_height="200dp"
         android:src="@drawable/icon"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="120dp" />
 
     <TextView
         android:id="@+id/txt_appname"
@@ -22,7 +22,7 @@
         android:layout_below="@+id/image_logo_icon"
         android:text="NIRAMAYA"
         android:textSize="30sp"
-        android:textColor="#E73232"
+        android:textColor="#FFEE58"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         style="@style/CustomFontStyle"
@@ -36,7 +36,8 @@
         android:layout_below="@+id/txt_appname"
         android:layout_centerHorizontal="true"
         android:padding="10dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"/>
     <EditText
         android:id="@+id/edt_password_login"
         android:layout_width="300dp"
@@ -46,20 +47,23 @@
         android:layout_below="@+id/edt_email_login"
         android:layout_centerHorizontal="true"
         android:padding="10dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:inputType="textPassword"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submit_login"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:text="Sign In"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/edt_password_login"
-        android:background="#9C27B0"
+        android:background="#2196F3"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="16sp"
         android:textColor="@color/white"
-        android:padding="5dp"
+        android:padding="10dp"
+
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

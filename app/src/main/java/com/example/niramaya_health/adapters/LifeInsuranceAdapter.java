@@ -1,6 +1,7 @@
 package com.example.niramaya_health.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.niramaya_health.R;
 import com.example.niramaya_health.models.InsuraneModel;
+import com.example.niramaya_health.webview_detail;
 
 import java.util.ArrayList;
 
@@ -40,15 +42,29 @@ public class LifeInsuranceAdapter  extends RecyclerView.Adapter<LifeInsuranceAda
 
         InsuraneModel model= lifeinsurance.get(position);
 
+        String url_insurance;
+
         holder.companyName.setText(model.getCompanyname());
         holder.validity.setText(model.getValidity());
         holder.amount.setText(model.getAmountcovered());
+        url_insurance=model.getWebsiteurl();
+
 
         String url=model.getImageurl();
 
         Glide.with(this.context)
                 .load(url)
                 .into(holder.logo);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, webview_detail.class);
+                intent.putExtra("url",url_insurance);
+                context.startActivity(intent);
+
+            }
+        });
 
 
 
@@ -68,6 +84,8 @@ public class LifeInsuranceAdapter  extends RecyclerView.Adapter<LifeInsuranceAda
         TextView companyName;
         TextView validity;
         TextView amount;
+
+
 
 
         public ViewHolder(@NonNull View itemView) {

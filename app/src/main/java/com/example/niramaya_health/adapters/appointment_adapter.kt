@@ -9,9 +9,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niramaya_health.R
 import com.example.niramaya_health.Upcoming_appoint_checkup
+import com.example.niramaya_health.models.Symptom
 import com.example.niramaya_health.models.medical_appoint_data
 
-class appointment_adapter(val context: Context, val appointlist:ArrayList<medical_appoint_data> )
+class appointment_adapter(val context: Context, val appointlist:ArrayList<Symptom> )
     : RecyclerView.Adapter<appointment_adapter.appointViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): appointViewHolder {
@@ -27,14 +28,14 @@ class appointment_adapter(val context: Context, val appointlist:ArrayList<medica
 
         val currentitem=appointlist[position]
 
-        holder.patientname.text=currentitem.patient_name
-        holder.patientcontact.text="Contact : "+currentitem.patient_contact
-        holder.patientemail.text="Email : "+currentitem.patient_email
-        holder.appointment_detail.text="Appointment Date and time : "+currentitem.upcoming_appointment+" and "+currentitem.time
+        holder.patientname.text=currentitem.username
+        holder.patientcontact.text="Contact : "+currentitem.usercontact
+        holder.patientemail.text="Email : "+currentitem.useremail
+        holder.appointment_detail.text="Appointment Date and time : "+currentitem.dateofvist+" and "+currentitem.timeofvisit
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context,Upcoming_appoint_checkup::class.java)
-            intent.putExtra("patient_id",currentitem.patient_id)
+            intent.putExtra("symptominfo",currentitem)
             context.startActivity(intent)
 
         }

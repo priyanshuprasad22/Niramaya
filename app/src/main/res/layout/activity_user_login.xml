@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".user_login"
-    android:background="#ADD8E6">
+    android:background="@drawable/all_back">
 
     <ImageView
         android:layout_width="200dp"
@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NIRAMAYA"
-        android:textColor="#E73232"
+        android:textColor="#FFEE58"
         style="@style/CustomFontStyle"
         android:layout_below="@+id/icon"
         android:layout_centerHorizontal="true"
@@ -61,7 +61,7 @@
         android:id="@+id/btn_user_sign_in"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:background="#9C27B0"
+        android:background="#1E88E5"
         android:textColor="@color/white"/>
 
 

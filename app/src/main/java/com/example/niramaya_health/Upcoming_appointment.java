@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.niramaya_health.adapters.appointment_adapter;
+import com.example.niramaya_health.models.Symptom;
 import com.example.niramaya_health.models.medical_appoint_data;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -45,7 +46,7 @@ public class Upcoming_appointment extends Fragment {
 
     private FirebaseDatabase firebaseDatabase;
 
-    private ArrayList<medical_appoint_data> medicalappointlist;
+    private ArrayList<Symptom> medicalappointlist;
 
     public Upcoming_appointment() {
         // Required empty public constructor
@@ -103,7 +104,7 @@ public class Upcoming_appointment extends Fragment {
     void setappointment()
     {
         firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference ref= firebaseDatabase.getReference("Upcoming Apointments/0PGgizjBfqadLsX3P0FYD1V42o02/Appointments");
+        DatabaseReference ref= firebaseDatabase.getReference("Professional/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+"/UpcomingAppointment");
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -112,7 +113,7 @@ public class Upcoming_appointment extends Fragment {
                 for(DataSnapshot childSnapshot:snapshot.getChildren())
                 {
                     Log.d("The appointment data",childSnapshot.toString());
-                    medical_appoint_data data=childSnapshot.getValue(medical_appoint_data.class);
+                    Symptom data=childSnapshot.getValue(Symptom.class);
 
                     medicalappointlist.add(data);
 

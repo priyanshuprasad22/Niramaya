@@ -6,7 +6,7 @@
     android:id="@+id/my_drawer_layout"
     android:layout_height="match_parent"
     tools:context=".Activity_professional"
-    android:background="#ADD8E6">
+    android:background="@drawable/all_back">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
                 android:textStyle="bold"
                 android:layout_marginLeft="30dp"
                 style="@style/CustomFontStyle"
-                android:textColor="#E73232"/>
+                android:textColor="#FFEE58"/>
 
 
         </LinearLayout>
@@ -61,6 +61,7 @@
 
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

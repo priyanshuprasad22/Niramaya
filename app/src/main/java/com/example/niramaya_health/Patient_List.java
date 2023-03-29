@@ -131,7 +131,7 @@ public class Patient_List extends Fragment {
     void setpatient()
     {
         firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference ref= firebaseDatabase.getReference("Patient_medical_data/0PGgizjBfqadLsX3P0FYD1V42o02/Patients");
+        DatabaseReference ref= firebaseDatabase.getReference("Professional/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+"/CompletedDiagnosis");
 
 
         ref.addValueEventListener(new ValueEventListener() {

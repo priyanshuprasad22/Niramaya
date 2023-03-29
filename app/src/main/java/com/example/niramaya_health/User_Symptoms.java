@@ -3,10 +3,25 @@ package com.example.niramaya_health;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.niramaya_health.adapters.QuestionAdapter;
+import com.example.niramaya_health.models.Question_model;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +38,10 @@ public class User_Symptoms extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    ArrayList<Question_model> question_modelslist;
+
+    RecyclerView recyclerView;
 
     public User_Symptoms() {
         // Required empty public constructor
@@ -59,6 +78,89 @@ public class User_Symptoms extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user__symptoms, container, false);
+        View rootview=inflater.inflate(R.layout.fragment_user__symptoms, container, false);
+
+        String json = null;
+        question_modelslist=new ArrayList<>();
+
+        try {
+            InputStream is = getActivity().getAssets().open("SymptomsOutput.json"); // replace "your_file_name" with the actual name of your JSON file
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        JSONArray jsonArray = null; // yourJsonString is the JSON string containing the array
+        try {
+            jsonArray = new JSONArray(json);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+
+        String type="";
+        String text="";
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = jsonArray.getJSONObject(i);
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                text = jsonObject.getString("text");
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                type = jsonObject.getString("type");
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+
+            if(type.equals("integer"))
+            {
+                Question_model question_model=new Question_model(text,type);
+                question_modelslist.add(question_model);
+            }
+            else if(type.equals("categorical"))
+            {
+                try {
+                    JSONArray choicesArray = jsonObject.getJSONArray("choices");
+
+                    ArrayList<String> choicesList = new ArrayList<>();
+                    for (int j = 0; j < choicesArray.length(); j++) {
+                        JSONObject choiceObject = choicesArray.getJSONObject(j);
+                        String choiceText = choiceObject.getString("text");
+                        choicesList.add(choiceText);
+
+                    }
+
+                    Question_model question_model=new Question_model(text,type,choicesList);
+                    question_modelslist.add(question_model);
+
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            // do something with the text and type values
+        }
+        recyclerView=rootview.findViewById(R.id.recycle_question_list);
+        QuestionAdapter questionAdapter=new QuestionAdapter(User_Symptoms.this.getContext(),question_modelslist);
+        recyclerView.setAdapter(questionAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(User_Symptoms.this.getContext()));
+
+
+
+
+
+
+        return rootview;
     }
 }

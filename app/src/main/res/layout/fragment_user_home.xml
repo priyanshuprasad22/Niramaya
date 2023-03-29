@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".User_home">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -13,141 +13,153 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-
-            <TextView
-                style="@style/CustomFontStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="Welcome to Niramaya"
-                android:textColor="@color/purple_200"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="5dp"
                 android:text="Thank you for choosing Niramaya!\nLet's get started on your journey towards a healthier you."
-                android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:background="@drawable/greenshish_gradient"
+                android:paddingHorizontal="8dp"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                style="@style/CustomFontStyle"/>
 
-            <androidx.appcompat.widget.AppCompatButton
+            <com.google.android.material.button.MaterialButton
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:background="#9C27B0"
                 android:text="Update Profile"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:layout_marginTop="8dp"
+                android:id="@+id/user_update_profile"/>
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
+                android:background="@color/white"
+                android:layout_marginTop="8dp">
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:id="@+id/linear_doctors">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="205dp"
-                        android:layout_height="200dp"
-                        android:src="@drawable/imagedoc" />
-
-                    <TextView
-                        android:layout_width="205dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Search Doctors"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:id="@+id/linear_doctors">
+
+                            <ImageView
+                                android:layout_width="205dp"
+                                android:layout_height="200dp"
+                                android:src="@drawable/imagedoc" />
+
+                            <TextView
+                                android:layout_width="205dp"
+                                android:layout_height="wrap_content"
+                                android:text="Search Doctors"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:id="@+id/linear_medicine">
+
+                            <ImageView
+                                android:layout_width="205dp"
+                                android:layout_height="200dp"
+                                android:src="@drawable/medicine" />
+
+                            <TextView
+                                android:layout_width="205dp"
+                                android:layout_height="wrap_content"
+                                android:text="Find Medicines"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:id="@+id/linear_insurance">
+
+                            <ImageView
+                                android:layout_width="205dp"
+                                android:layout_height="200dp"
+                                android:src="@drawable/insurance" />
+
+                            <TextView
+                                android:layout_width="205dp"
+                                android:layout_height="wrap_content"
+                                android:text="Find Insurances"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:id="@+id/linear_test">
+
+                            <ImageView
+                                android:layout_width="205dp"
+                                android:layout_height="200dp"
+                                android:src="@drawable/test" />
+
+                            <TextView
+                                android:layout_width="205dp"
+                                android:layout_height="wrap_content"
+                                android:text="Find Tests"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:id="@+id/linear_medicine">
 
-                    <ImageView
-                        android:layout_width="205dp"
-                        android:layout_height="200dp"
-                        android:src="@drawable/medicine" />
-
-                    <TextView
-                        android:layout_width="205dp"
-                        android:layout_height="wrap_content"
-                        android:text="Find Medicine"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
+            </androidx.cardview.widget.CardView>
 
 
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:id="@+id/linear_insurance">
-
-                    <ImageView
-                        android:layout_width="205dp"
-                        android:layout_height="200dp"
-                        android:src="@drawable/insurance" />
-
-                    <TextView
-                        android:layout_width="205dp"
-                        android:layout_height="wrap_content"
-                        android:text="Find Insurance"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:id="@+id/linear_test">
-
-                    <ImageView
-                        android:layout_width="205dp"
-                        android:layout_height="200dp"
-                        android:src="@drawable/test" />
-
-                    <TextView
-                        android:layout_width="205dp"
-                        android:layout_height="wrap_content"
-                        android:text="Find lab test"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-
-                </LinearLayout>
-
-            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -185,7 +197,7 @@
         </LinearLayout>
 
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
 </FrameLayout>

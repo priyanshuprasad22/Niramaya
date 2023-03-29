@@ -25,7 +25,7 @@ class Patient_detail : AppCompatActivity() {
         button=findViewById(R.id.update_btn)
 
         button.setOnClickListener {
-            patientdata()
+//            patientdata()
 
         }
 
@@ -33,30 +33,30 @@ class Patient_detail : AppCompatActivity() {
 
 
     }
-    private fun patientdata()
-    {
-        databaseReference=FirebaseDatabase.getInstance().getReference()
-        databaseReference.child("Patient_medical_data").child(auth.currentUser?.uid!!).child("Patients").push().setValue(patient_medical_data("David","2mqqk8fUtpZNUrB1LnZKYTC1F4Q2",
-            listOf("Fever","Chills"),"20-5-22",
-            listOf("No"),"No","Done","Normal","Common Cold","Antibiotics",
-            listOf("Cough Syrup","Antibiotics"),"23-05-22"
-        ))
-
-        databaseReference.child("Patient_medical_data").child(auth.currentUser?.uid!!).child("Patients").push().setValue(patient_medical_data("David","QLRLuJJVdbMj1xfMA1fttXzsxyh1",
-            listOf("Fever","Chills"),"20-5-22",
-            listOf("No"),"No","Done","Normal","Common Cold","Antibiotics",
-            listOf("Cough Syrup","Antibiotics"),"23-05-22"
-        ))
-
-        databaseReference.child("Patient_medical_data").child(auth.currentUser?.uid!!).child("Patients").push().setValue(patient_medical_data("David","QLRLuJJVdbMj1xfMA1fttXzsxyh1",
-            listOf("Fever","Chills"),"20-5-22",
-            listOf("No"),"No","Done","Normal","Common Cold","Antibiotics",
-            listOf("Cough Syrup","Antibiotics"),"23-05-22"
-        ))
-
-
-        Toast.makeText(this,"Update Sucessful",Toast.LENGTH_SHORT).show()
-
-
-    }
+//    private fun patientdata()
+//    {
+//        databaseReference=FirebaseDatabase.getInstance().getReference()
+//        databaseReference.child("Patient_medical_data").child(auth.currentUser?.uid!!).child("Patients").push().setValue(patient_medical_data("David","2mqqk8fUtpZNUrB1LnZKYTC1F4Q2",
+//            listOf("Fever","Chills"),"20-5-22",
+//            listOf("No"),"No","Done","Normal","Common Cold","Antibiotics",
+//            listOf("Cough Syrup","Antibiotics"),"23-05-22"
+//        ))
+//
+//        databaseReference.child("Patient_medical_data").child(auth.currentUser?.uid!!).child("Patients").push().setValue(patient_medical_data("David","QLRLuJJVdbMj1xfMA1fttXzsxyh1",
+//            listOf("Fever","Chills"),"20-5-22",
+//            listOf("No"),"No","Done","Normal","Common Cold","Antibiotics",
+//            listOf("Cough Syrup","Antibiotics"),"23-05-22"
+//        ))
+//
+//        databaseReference.child("Patient_medical_data").child(auth.currentUser?.uid!!).child("Patients").push().setValue(patient_medical_data("David","QLRLuJJVdbMj1xfMA1fttXzsxyh1",
+//            listOf("Fever","Chills"),"20-5-22",
+//            listOf("No"),"No","Done","Normal","Common Cold","Antibiotics",
+//            listOf("Cough Syrup","Antibiotics"),"23-05-22"
+//        ))
+//
+//
+//        Toast.makeText(this,"Update Sucessful",Toast.LENGTH_SHORT).show()
+//
+//
+//    }
 }

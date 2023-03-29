@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/doctor_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/imagedoc"
+            android:contentDescription="doctor_photo"
+            android:scaleType="centerCrop"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/doctor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="doctor_name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_toEndOf="@id/doctor_photo"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/doctor_qualification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="doctor_qualification"
+            android:textSize="16sp"
+            android:layout_below="@id/doctor_name"
+            android:layout_toEndOf="@id/doctor_photo"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/doctor_experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="doctor_experience"
+            android:textSize="16sp"
+            android:layout_below="@id/doctor_qualification"
+            android:layout_toEndOf="@id/doctor_photo"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/doctor_specialization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor Specilization"
+            android:textSize="16sp"
+            android:layout_below="@id/doctor_experience"
+            android:layout_toEndOf="@id/doctor_photo"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/doctor_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="doctor_location"
+            android:textSize="16sp"
+            android:layout_below="@id/doctor_specialization"
+            android:layout_toEndOf="@id/doctor_photo"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

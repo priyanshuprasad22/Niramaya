@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#ADD8E6">
+    android:background="@drawable/all_back">
 
     <ImageView
         android:layout_width="200dp"
@@ -21,7 +21,7 @@
         android:layout_below="@+id/image_icon"
         android:text="NIRAMAYA"
         android:textSize="30sp"
-        android:textColor="#E73232"
+        android:textColor="#FFEE58"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         style="@style/CustomFontStyle"
@@ -54,7 +54,7 @@
         android:layout_below="@+id/btn_professional_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="Click to Register as Medical Professonal"
+        android:text="Click to Register as Medical Professional"
         android:textColor="@color/black" />
     <TextView
         android:layout_width="wrap_content"

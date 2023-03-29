@@ -1,5 +1,7 @@
 package com.example.niramaya_health;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -36,10 +39,13 @@ public class Home_Page extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     AutoCompleteTextView autoCompleteTextView ;
     RecyclerView recyclerView;
+    Button updatedoctor;
 
     ArrayList<Trends> topiclist;
 
     String[] topic;
+
+    ProgressDialog progressDialog;
 
     private static String url=" ";
 
@@ -74,13 +80,18 @@ public class Home_Page extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootview= inflater.inflate(R.layout.fragment_home__page, container, false);
-        autoCompleteTextView=rootview.findViewById(R.id.autoCompleteTextView);
         recyclerView=rootview.findViewById(R.id.feed_list);
+
+        progressDialog=new ProgressDialog(Home_Page.this.getContext());
+        progressDialog.setTitle("Fetching feed..");
+        progressDialog.show();
+
         topic=getResources().getStringArray(R.array.currenttopics);
 
         topiclist=new ArrayList<>();
         settrends();
-        settopic();
+//        settopic();
+
 
         return rootview;
 
@@ -131,6 +142,7 @@ public class Home_Page extends Fragment {
                         TrendsAdapter adapter = new TrendsAdapter(Home_Page.this.getContext(), topiclist);
                         recyclerView.setAdapter(adapter);
                         recyclerView.setLayoutManager(new LinearLayoutManager(Home_Page.this.getContext()));
+                        progressDialog.dismiss();
                     }
                 },
                 new Response.ErrorListener() {
@@ -147,18 +159,18 @@ public class Home_Page extends Fragment {
         queue.add(jsonObjectRequest);
     }
 
-    public void settopic() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), R.layout.dropdown, topic);
-
-        autoCompleteTextView.setAdapter(adapter);
-
-        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedItem = parent.getItemAtPosition(position).toString();
-            }
-        });
-    }
+//    public void settopic() {
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), R.layout.dropdown, topic);
+//
+//        autoCompleteTextView.setAdapter(adapter);
+//
+//        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                String selectedItem = parent.getItemAtPosition(position).toString();
+//            }
+//        });
+//    }
 
 
 

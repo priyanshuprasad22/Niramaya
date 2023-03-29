@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ADD8E6"
+    android:background="@drawable/all_back"
     tools:context=".user_registration">
 
 
@@ -25,7 +25,7 @@
             android:text="NIRAMAYA"
             android:layout_gravity="center"
             android:textSize="30dp"
-            android:textColor="#E73232"
+            android:textColor="#FFEE58"
             style="@style/CustomFontStyle"
             android:padding="5dp"
             android:layout_marginTop="10dp"/>
@@ -36,7 +36,7 @@
             android:text="Please enter your basic details carefully to register on NIRAMAYA platform"
             android:layout_gravity="center"
             android:textSize="15sp"
-            android:textColor="#9C27B0"
+            android:textColor="#FFF176"
             android:padding="10dp"/>
 
         <EditText
@@ -58,7 +58,8 @@
             android:textSize="18sp"
             android:background="@color/white"
             android:layout_marginTop="10dp"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:inputType="textEmailAddress"/>
         <EditText
             android:id="@+id/edt_user_password"
             android:layout_width="280dp"
@@ -91,7 +92,7 @@
             android:layout_gravity="center"
             android:textSize="18sp"
             android:layout_marginTop="20dp"
-            android:background="#9C27B0"
+            android:background="#1E88E5"
             android:textColor="@color/white"/>
 
 

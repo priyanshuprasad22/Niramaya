@@ -6,12 +6,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Activity_professional extends AppCompatActivity {
 
@@ -31,6 +34,9 @@ public class Activity_professional extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
         tabLayout.addTab(tabLayout.newTab().setText("Patients"));
         tabLayout.addTab(tabLayout.newTab().setText("Upcoming\nSessions"));
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this::onOptionsItemSelected);
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
@@ -76,6 +82,34 @@ public class Activity_professional extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id=item.getItemId();
+
+        if(id==R.id.nav_account)
+        {
+            Intent intent=new Intent(Activity_professional.this,MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if(id==R.id.nav_logout)
+        {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent=new Intent(Activity_professional.this,MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if(id==R.id.nav_settings) {
+            Intent intent=new Intent(Activity_professional.this,MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if(id==R.id.nav_complete_profile)
+        {
+            Intent intent=new Intent(Activity_professional.this,Profile_doctor.class);
+            startActivity(intent);
+            return true;
+        }
+
         return actionBarDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 }

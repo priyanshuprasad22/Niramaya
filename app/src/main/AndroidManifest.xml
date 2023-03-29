@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +18,45 @@
         android:theme="@style/Theme.Niramayahealth"
         android:usesCleartextTraffic="true"
         tools:targetApi="28">
+        <activity
+            android:name=".UpcomingUserAppoint"
+            android:exported="false" />
+        <activity
+            android:name=".save_answer"
+            android:exported="false" />
+        <activity
+            android:name=".AddQuestion"
+            android:exported="false" />
+        <activity
+            android:name=".DisplayQuestion"
+            android:exported="false" />
+        <activity
+            android:name=".question_view"
+            android:exported="false" />
+        <activity
+            android:name=".Account_user"
+            android:exported="false" />
+        <activity
+            android:name=".LoadingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".User_full_profile"
+            android:exported="false" />
+        <activity
+            android:name=".Doctor_full_view"
+            android:exported="false" />
+        <activity
+            android:name=".Doctor_list"
+            android:exported="false" />
+        <activity
+            android:name=".Profile_doctor"
+            android:exported="false" />
         <activity
             android:name=".User_Activity"
             android:exported="false" />
@@ -53,17 +93,12 @@
         <activity
             android:name=".Patient_detail"
             android:exported="false" />
-        <activity android:name=".Insurance_user"
-            android:exported="false"/>
+        <activity
+            android:name=".Insurance_user"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

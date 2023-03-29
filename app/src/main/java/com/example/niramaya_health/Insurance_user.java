@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,6 +30,8 @@ public class Insurance_user extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<InsuraneModel> insurancelist;
 
+    ProgressDialog progressDialog;
+
     String url;
 
 
@@ -38,6 +42,11 @@ public class Insurance_user extends AppCompatActivity {
 
         insurancelist=new ArrayList<>();
         recyclerView=findViewById(R.id.recycle_insurance);
+
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setTitle("Fetching insurances ... ");
+        progressDialog.show();
+
 
         settrends();
 
@@ -56,6 +65,7 @@ public class Insurance_user extends AppCompatActivity {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
+                progressDialog.dismiss();
 
                 try {
                     Log.d("insurance response",response.toString());
