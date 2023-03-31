@@ -5,10 +5,10 @@ Good health and wellbeing are fundamental aspects of human life that enable indi
 To tackle this challenge our team "Niramaya" developed an app "NIRAMAYA".
 
 ## Demo Video Link:
-
+https://youtu.be/uHjkkC2mIM4
 
 ## Presentation Link:
-https://youtu.be/uHjkkC2mIM4
+
 
 ## Technology Stack:
 
