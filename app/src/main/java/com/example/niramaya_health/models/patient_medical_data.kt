@@ -1,6 +1,6 @@
 package com.example.niramaya_health.models
 
-class patient_medical_data {
+class patient_medical_data : java.io.Serializable{
 
     var patient_name:String?=null
     var patient_id:String?=null

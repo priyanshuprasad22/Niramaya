@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.niramaya_health.adapters.Upcoming;
 import com.example.niramaya_health.models.UserUpcomingAppoint;
@@ -45,6 +46,8 @@ public class User_appoint extends Fragment {
 
     String specialization="";
     RecyclerView recyclerView;
+
+    ImageView imageView;
 
     ArrayList<UserUpcomingAppoint> userUpcomingAppoints;
 
@@ -86,6 +89,7 @@ public class User_appoint extends Fragment {
         View rootview=inflater.inflate(R.layout.fragment_user_appoint, container, false);
 
         recyclerView=rootview.findViewById(R.id.recycle_view_appointment);
+        imageView=rootview.findViewById(R.id.img_nodata);
         userUpcomingAppoints=new ArrayList<>();
 
         DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("User/"+ FirebaseAuth.getInstance().getCurrentUser().getUid()+"/Appointment");
@@ -110,6 +114,11 @@ public class User_appoint extends Fragment {
 
 
 
+                }
+
+                if(userUpcomingAppoints.size()==0)
+                {
+                    imageView.setVisibility(View.VISIBLE);
                 }
 
                 Upcoming upcoming=new Upcoming(userUpcomingAppoints,User_appoint.this.getContext());

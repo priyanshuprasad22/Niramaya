@@ -95,7 +95,7 @@ public class User_Activity extends AppCompatActivity {
 
         if(id == R.id.nav_account)
         {
-            Intent intent=new Intent(this,MainActivity.class);
+            Intent intent=new Intent(this,Account.class);
             startActivity(intent);
             return true;
         }
@@ -103,11 +103,6 @@ public class User_Activity extends AppCompatActivity {
         {
             FirebaseAuth.getInstance().signOut();
 
-            Intent intent=new Intent(this,MainActivity.class);
-            startActivity(intent);
-            return true;
-        }
-        else if(id == R.id.nav_settings){
             Intent intent=new Intent(this,MainActivity.class);
             startActivity(intent);
             return true;

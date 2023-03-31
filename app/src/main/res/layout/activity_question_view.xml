@@ -6,46 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".question_view">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Please give a brief about your problem"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        android:textSize="22sp"
-        android:textColor="@color/black"
-        android:id="@+id/question"/>
-
-    <EditText
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:hint="Answer here"
-        android:layout_below="@+id/question"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/about_answer"
-        />
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/about_answer"
-        android:layout_marginTop="30dp">
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:cardElevation="5dp">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_save"
-            android:layout_width="300dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Search Doctor"
-            android:padding="10dp"
-            android:background="#AB47BC"
-            android:textColor="@color/white"
-            android:layout_gravity="center"/>
+            android:orientation="vertical"
+            android:background="@drawable/all_back"
+            >
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please give a brief about your problem"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:id="@+id/question"
+                />
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:hint="Answer here"
+                android:layout_below="@+id/question"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/about_answer"
+                android:textColor="@color/white"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/about_answer"
+                android:layout_marginTop="30dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_save"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text="Search Doctor"
+                    android:padding="10dp"
+                    android:background="#2196F3"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"/>
 
 
 
-    </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
 
 
 

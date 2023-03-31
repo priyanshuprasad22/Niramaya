@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Patient_full_medical_detail">
+    tools:context=".Patient_full_medical_detail"
+    android:id="@+id/activity_appoint_checkup">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,22 +28,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name: John Doe" />
+                android:text="Name: John Doe"
+                android:id="@+id/name_patient"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ID: 12345" />
+                android:text="ID: 12345"
+                android:id="@+id/patient_id"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Contact: 555-1234" />
+                android:text="Contact: 555-1234"
+                android:id="@+id/contact_patient"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email: john.doe@example.com" />
+                android:text="Email: john.doe@example.com"
+                android:id="@+id/email_patient"/>
 
             <!-- Medical Information -->
             <TextView
@@ -56,14 +61,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Symptoms:" />
+                android:text="Symptoms:"
+                android:id="@+id/symptoms_patient"/>
 
             <EditText
-                android:id="@+id/edt_patientlist_symptom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Symptoms"
-                android:enabled="false"/>
+                android:id="@+id/symptoms_edttext"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Add Symptoms"
+                android:id="@+id/doctor_symptoms_edttext"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -72,31 +82,28 @@
                 android:text="Basic Medical Parameters:" />
 
             <EditText
-                android:id="@+id/edt_patientlist_height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Height"
-                android:enabled="false"/>
+                android:id="@+id/patient_height"/>
 
             <EditText
-                android:id="@+id/edt_patientlist_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Weight"
-                android:enabled="false"/>
+                android:id="@+id/patient_weight"/>
 
             <EditText
-                android:id="@+id/edt_patientlist_bloodpressure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Blood Pressure" />
+                android:hint="Blood Pressure"
+                android:id="@+id/patient_blood_pressure"/>
 
             <EditText
-                android:id="@+id/edt_patientlist_level"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="O2 Level"
-                android:enabled="false" />
+                android:id="@+id/patient_O2_level"/>
 
             <!-- Button to redirect to Past Medical Data -->
             <Button
@@ -104,7 +111,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="View Past Medical Data"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:id="@+id/patient_medical_data"/>
 
             <!-- Medication Input and Advices -->
             <TextView
@@ -116,12 +124,32 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edt_patientlist_advice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Medication Input and Advices"
                 android:minLines="5"
-                android:enabled="false"/>
+                android:id="@+id/medical_advices"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Medication"
+                android:minLines="2"
+                android:id="@+id/patient_medication"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Allergies"
+                android:id="@+id/allegies"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Treatment Plan"
+                android:id="@+id/treatment_plan"/>
+
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -131,23 +159,39 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edt_patientlist_follow_up"
+            <CheckBox
+                android:id="@+id/follow_up_checkbox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Select Follow-Up Date"
-                android:inputType="date"
-                android:enabled="false"/>
+                android:text="Follow-up date"
+                android:checked="false"/>
 
-            <Button
+            <EditText
+                android:id="@+id/follow_up_date_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Follow-Up Date : Format - DD-MM-YYYY"
+                android:inputType="text"
+                android:visibility="gone"
+                android:text="-"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Final Diagnosis Statement"
+                android:minLines="5"
+                android:id="@+id/diagnosis_appoint"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_update_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Update"
+                android:text="Submit"
                 android:textSize="20dp"
+                android:textColor="@color/white"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:onClick="onEnableButtonClick"/>
+                android:background="#2196F3"
+                android:padding="5dp"/>
 
         </LinearLayout>
 

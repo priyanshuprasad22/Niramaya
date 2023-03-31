@@ -5,35 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Insurance_user"
-    android:background="#ADD8E6">
+    android:background="@color/white">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Available Insurances"
-        android:textSize="30sp"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/txt_available_insurance"
-        android:textColor="@color/black"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/search_linear"
-        android:layout_below="@id/txt_available_insurance">
+        android:layout_marginTop="10dp">
         <ImageView
             android:layout_width="30dp"
             android:layout_height="50dp"
             android:src="@drawable/baseline_search_24"
             android:layout_marginLeft="20dp"
-            android:background="#F2D5D2D2"/>
+            android:background="@color/white"/>
         <EditText
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:hint="Search Insurance"
-            android:background="#F2D5D2D2"/>
+            android:background="@color/white"/>
 
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView

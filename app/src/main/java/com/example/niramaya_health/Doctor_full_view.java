@@ -7,6 +7,7 @@ import androidx.fragment.app.DialogFragment;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Log;
@@ -212,7 +213,7 @@ public class Doctor_full_view extends AppCompatActivity implements DatePickerDia
                     message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recievermail));
                     message.setSubject("Appointment Confirmation by Niramaya");
                     message.setText("Hello "+username+","+"\n\nWe are pleased to inform you that your appointment has been scheduled with "+name.getText()+" at "+selecttime.getText()+" on "+selectdate.getText()+"\n\nKindly visit the clinic on scheduled time."+"\n"+"Clinic: "+location.getText()+"\n"+"Contact: "+contact.getText()+
-                            "\n\nThankyou for using our App.\n" +
+                            "\n\nThank you for using our App.\n" +
                             "Hope you have a great experience here!\n\n\nRegards,\nTeam Niramaya");
 
                     Thread thread = new Thread(new Runnable() {
@@ -270,6 +271,8 @@ public class Doctor_full_view extends AppCompatActivity implements DatePickerDia
 
                 DatabaseReference data=FirebaseDatabase.getInstance().getReference("User/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+"/Symptoms/"+formatuserdate);
 
+                Log.d("User Detail",data.toString());
+
 
                 data.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -282,7 +285,10 @@ public class Doctor_full_view extends AppCompatActivity implements DatePickerDia
                             String question=dataSnapshot.child("question").getValue(String.class);
                             String answer=dataSnapshot.child("answer").getValue(String.class);
 
-                            symptoms.put(question,answer);
+
+                            String newKey = question.replaceAll("[/\\.#\\[\\]]", "_");
+
+                            symptoms.put(newKey,answer.toString());
 
 
                         }
@@ -293,6 +299,10 @@ public class Doctor_full_view extends AppCompatActivity implements DatePickerDia
 
                         DatabaseReference databaseReference1=FirebaseDatabase.getInstance().getReference();
                         databaseReference1.child("Professional").child(doctorid).child("UpcomingAppointment").push().setValue(new Symptom(symptoms,FirebaseAuth.getInstance().getCurrentUser().getUid(),doctorid,selectdate.getText().toString(),selecttime.getText().toString(),username,useremail,usercontact,name.getText().toString(),location.getText().toString(),specialization.getText().toString()));
+
+                        Intent intent=new Intent(Doctor_full_view.this,User_Activity.class);
+                        startActivity(intent);
+
 
 
                     }

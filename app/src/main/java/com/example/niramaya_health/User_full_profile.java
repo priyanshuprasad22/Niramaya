@@ -88,7 +88,7 @@ public class User_full_profile extends AppCompatActivity {
         String username=name.getText().toString();
         String useremail=email.getText().toString();
         String usercontact=contact.getText().toString();
-        String useraddress=contact.getText().toString();
+        String useraddress=address.getText().toString();
         String userage=age.getText().toString();
 
         storageReference= FirebaseStorage.getInstance().getReference().child("users/"+ UUID.randomUUID().toString());

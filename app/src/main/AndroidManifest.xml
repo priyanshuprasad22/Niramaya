@@ -19,6 +19,32 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="28">
         <activity
+            android:name=".UserPastDetail"
+            android:exported="false" />
+        <activity
+            android:name=".MedList"
+            android:exported="false" />
+        <activity
+            android:name=".LabTest"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.niramaya_health.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
+        <activity
+            android:name=".Prescription"
+            android:exported="false" />
+        <activity
+            android:name=".Account"
+            android:exported="false" />
+        <activity
             android:name=".UpcomingUserAppoint"
             android:exported="false" />
         <activity

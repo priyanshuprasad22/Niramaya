@@ -45,8 +45,6 @@ public class LifeInsuranceAdapter  extends RecyclerView.Adapter<LifeInsuranceAda
         String url_insurance;
 
         holder.companyName.setText(model.getCompanyname());
-        holder.validity.setText(model.getValidity());
-        holder.amount.setText(model.getAmountcovered());
         url_insurance=model.getWebsiteurl();
 
 
@@ -93,8 +91,6 @@ public class LifeInsuranceAdapter  extends RecyclerView.Adapter<LifeInsuranceAda
 
             logo=itemView.findViewById(R.id.companyLogoImageView);
             companyName=itemView.findViewById(R.id.companyNameTextView);
-            validity=itemView.findViewById(R.id.validityTextView);
-            amount=itemView.findViewById(R.id.amountTextView);
 
 
         }

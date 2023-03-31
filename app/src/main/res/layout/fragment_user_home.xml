@@ -27,17 +27,6 @@
                 android:textAlignment="center"
                 style="@style/CustomFontStyle"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="#9C27B0"
-                android:text="Update Profile"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:layout_marginTop="8dp"
-                android:id="@+id/user_update_profile"/>
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,7 +52,7 @@
                             <ImageView
                                 android:layout_width="205dp"
                                 android:layout_height="200dp"
-                                android:src="@drawable/imagedoc" />
+                                android:src="@drawable/doctor" />
 
                             <TextView
                                 android:layout_width="205dp"
@@ -85,7 +74,7 @@
                             <ImageView
                                 android:layout_width="205dp"
                                 android:layout_height="200dp"
-                                android:src="@drawable/medicine" />
+                                android:src="@drawable/medical" />
 
                             <TextView
                                 android:layout_width="205dp"

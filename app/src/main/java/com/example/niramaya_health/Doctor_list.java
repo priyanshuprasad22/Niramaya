@@ -7,10 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.niramaya_health.adapters.DoctorListAdapter;
+import com.example.niramaya_health.adapters.QuestionAdapter;
 import com.example.niramaya_health.models.Doctor_full_info;
+import com.example.niramaya_health.models.Question_model;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -20,10 +25,12 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class Doctor_list extends AppCompatActivity {
+public class Doctor_list extends AppCompatActivity implements TextWatcher {
 
     ArrayList<Doctor_full_info> doctor_full_infoArrayList;
     RecyclerView recyclerView;
+
+    EditText edttext;
 
     ProgressDialog progressDialog;
 
@@ -35,15 +42,28 @@ public class Doctor_list extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_list);
 
 
+
         progressDialog=new ProgressDialog(this);
         progressDialog.setTitle("Fetching Doctor details...");
         progressDialog.show();
+
+        edttext=findViewById(R.id.search_doctor);
+
+
+
+        edttext.addTextChangedListener(this);
 
 
         doctor_full_infoArrayList=new ArrayList<>();
         recyclerView=findViewById(R.id.recycle_doctor_list);
 
         formatteddate=getIntent().getStringExtra("formatteddate");
+
+        if(formatteddate==null)
+        {
+            formatteddate="";
+
+        }
 
         setdoctorlist();
 
@@ -81,4 +101,38 @@ public class Doctor_list extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+        ArrayList<Doctor_full_info> doctor_full_infos=new ArrayList<>();
+
+        for(Doctor_full_info doc:doctor_full_infoArrayList)
+        {
+            if((doc.getSpecialization().toLowerCase().contains(charSequence.toString().toLowerCase()))||
+                    (doc.getLocation().toLowerCase().contains(charSequence.toString().toLowerCase()))||
+                    (doc.getName().toLowerCase().contains(charSequence.toString().toLowerCase())))
+            {
+                doctor_full_infos.add(doc);
+            }
+        }
+
+        DoctorListAdapter doctorListAdapter=new DoctorListAdapter(Doctor_list.this,doctor_full_infos,formatteddate);
+        recyclerView.setAdapter(doctorListAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(Doctor_list.this));
+
+
+
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
+    }
 }

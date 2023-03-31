@@ -26,39 +26,40 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         style="@style/CustomFontStyle"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+     />
     <EditText
         android:id="@+id/edt_email_login"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Email"
-        android:background="@color/white"
         android:layout_below="@+id/txt_appname"
         android:layout_centerHorizontal="true"
         android:padding="10dp"
         android:layout_marginTop="10dp"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:background="@drawable/bluish_background"/>
     <EditText
         android:id="@+id/edt_password_login"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Password"
-        android:background="@color/white"
         android:layout_below="@+id/edt_email_login"
         android:layout_centerHorizontal="true"
         android:padding="10dp"
         android:layout_marginTop="10dp"
         android:textSize="16sp"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:background="@drawable/bluish_background"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submit_login"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="50dp"
         android:text="Sign In"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/edt_password_login"
-        android:background="#2196F3"
+        android:background="@drawable/round_backgound"
         android:textStyle="bold"
         android:textSize="16sp"
         android:textColor="@color/white"

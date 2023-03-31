@@ -1,12 +1,25 @@
 package com.example.niramaya_health;
 
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import com.example.niramaya_health.adapters.PostTextItem;
+import com.example.niramaya_health.adapters.TimelineAdapter;
+import com.example.niramaya_health.models.Symptom;
+import com.example.niramaya_health.models.patient_medical_data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +36,13 @@ public class user_timeline extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private RecyclerView timelineRV;
+    private TimelineAdapter adapter;
+    private List<TimelineItem> mData;
+    private List<patient_medical_data> symptomList;
+
+    ImageView imageView;
 
     public user_timeline() {
         // Required empty public constructor
@@ -59,6 +79,56 @@ public class user_timeline extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user_timeline, container, false);
+        View rootview = inflater.inflate(R.layout.fragment_user_timeline, container, false);
+
+        mData=new ArrayList<>();
+
+        timelineRV = rootview.findViewById(R.id.timeline_recyclerView);
+        imageView=rootview.findViewById(R.id.img_nodata);
+
+
+
+        getListData();
+
+        return rootview;
+
+
+    }
+
+    private void setupAdapter() {
+
+        if(mData.size()==0)
+        {
+            imageView.setVisibility(View.VISIBLE);
+        }
+
+        adapter = new TimelineAdapter(user_timeline.this.getContext(), mData,symptomList);
+        timelineRV.setAdapter(adapter);
+        timelineRV.setLayoutManager(new LinearLayoutManager(user_timeline.this.getContext()));
+
+
+
+    }
+
+    private void getListData() {
+
+        UserData.getTimelineData(new UserData.DataCallback() {
+            @Override
+            public void onDataReceived(List<TimelineItem> data, List<patient_medical_data> diagnosis) {
+                mData = data;
+                symptomList=diagnosis;
+
+                for(TimelineItem item:mData)
+                {
+                    PostTextItem postTextItem=item.getPostTextItem();
+                    Log.d("DoctorName",postTextItem.getPostText());
+                }
+                setupAdapter();
+
+
+
+            }
+        });
+
     }
 }

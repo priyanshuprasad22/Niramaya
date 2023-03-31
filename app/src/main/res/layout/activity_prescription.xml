@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Patient_full_medical_detail"
+    android:id="@+id/activity_appoint_checkup">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/prescription_scrollview">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Patient Details -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Patient Details"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: John Doe"
+                android:id="@+id/name_patient"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: 12345"
+                android:id="@+id/patient_id"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact: 555-1234"
+                android:id="@+id/contact_patient"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: john.doe@example.com"
+                android:id="@+id/email_patient"/>
+
+            <!-- Medical Information -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Medical Information"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Symptoms:"
+                android:id="@+id/symptoms_patient"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Symptoms"
+                android:id="@+id/symptoms_edttext"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Add Symptoms"
+                android:id="@+id/doctor_symptoms_edttext"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Basic Medical Parameters:"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Height"
+                android:id="@+id/patient_height"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Weight"
+                android:id="@+id/patient_weight"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Blood Pressure"
+                android:id="@+id/patient_blood_pressure"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="O2 Level"
+                android:id="@+id/patient_O2_level"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+
+
+            <!-- Medication Input and Advices -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Medication Input and Advices"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Medication Input and Advices"
+                android:minLines="5"
+                android:id="@+id/medical_advices"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Medication"
+                android:minLines="2"
+                android:id="@+id/patient_medication"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Allergies"
+                android:id="@+id/allegies"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Treatment Plan"
+                android:id="@+id/treatment_plan"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Follow-Up Date"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+
+            <EditText
+                android:id="@+id/follow_up_date_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Follow-Up Date : Format - DD-MM-YYYY"
+                android:inputType="text"
+                android:text="-"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Final Diagnosis Statement"
+                android:minLines="5"
+                android:id="@+id/diagnosis_appoint"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/download_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Share Prescription "
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:background="#2196F3"
+                android:padding="10dp"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

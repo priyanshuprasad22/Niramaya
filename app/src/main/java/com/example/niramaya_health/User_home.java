@@ -25,12 +25,20 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.niramaya_health.adapters.TrendsAdapter;
+import com.example.niramaya_health.adapters.Upcoming;
 import com.example.niramaya_health.models.Trends;
+import com.example.niramaya_health.models.User;
+import com.example.niramaya_health.models.UserUpcomingAppoint;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -72,7 +80,10 @@ public class User_home extends Fragment {
     private Button button;
 
     private LinearLayout linearLayout;
-    private LinearLayout linearLayout2;
+    private LinearLayout linearLayout2,linearLayout3,linearLayout4;
+
+    private RecyclerView recyclerView1;
+
 
     public User_home() {
         // Required empty public constructor
@@ -115,8 +126,12 @@ public class User_home extends Fragment {
         recyclerView=rootview.findViewById(R.id.userfeed_recycler_view);
         linearLayout=rootview.findViewById(R.id.linear_insurance);
         linearLayout2=rootview.findViewById(R.id.linear_doctors);
+        linearLayout3=rootview.findViewById(R.id.linear_test);
+        linearLayout4=rootview.findViewById(R.id.linear_medicine);
 
-        button=rootview.findViewById(R.id.user_update_profile);
+        recyclerView1=rootview.findViewById(R.id.userappoint_recycler_view);
+
+
 
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -144,19 +159,12 @@ public class User_home extends Fragment {
                     }
                 });
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(User_home.this.getContext(),User_full_profile.class);
-                startActivity(intent);
-            }
-        });
-
 
         progressDialog=new ProgressDialog(User_home.this.getContext());
         progressDialog.setTitle("Fetching Details..");
         progressDialog.show();
         settrends();
+        setappoint();
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,6 +179,23 @@ public class User_home extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(User_home.this.getContext(),Doctor_list.class);
+                startActivity(intent);
+            }
+        });
+
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(User_home.this.getContext(),LabTest.class);
+                startActivity(intent);
+
+            }
+        });
+
+        linearLayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(User_home.this.getContext(),MedList.class);
                 startActivity(intent);
             }
         });
@@ -238,6 +263,47 @@ public class User_home extends Fragment {
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
         ));
         queue.add(jsonObjectRequest);
+    }
+
+    public void setappoint()
+    {
+        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("User/"+ FirebaseAuth.getInstance().getCurrentUser().getUid()+"/Appointment");
+
+
+        ArrayList<UserUpcomingAppoint> userUpcomingAppoints=new ArrayList<>();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for( DataSnapshot dataSnapshot:snapshot.getChildren())
+                {
+                    String doctorname=dataSnapshot.child("doctorname").getValue(String.class);
+                    String doctordate=dataSnapshot.child("dateofvist").getValue(String.class);
+                    String doctorlocation=dataSnapshot.child("location").getValue(String.class);
+                    String doctortime=dataSnapshot.child("timeofvisit").getValue(String.class);
+                    String specialization=dataSnapshot.child("specialization").getValue(String.class);
+
+                    UserUpcomingAppoint upcomingAppoint=new UserUpcomingAppoint(doctorname,doctorlocation,doctordate,doctortime,specialization);
+
+                    userUpcomingAppoints.add(upcomingAppoint);
+
+
+
+
+                }
+
+                Upcoming upcoming=new Upcoming(userUpcomingAppoints,User_home.this.getContext());
+                recyclerView1.setAdapter(upcoming);
+                recyclerView1.setLayoutManager(new LinearLayoutManager(User_home.this.getContext()));
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 

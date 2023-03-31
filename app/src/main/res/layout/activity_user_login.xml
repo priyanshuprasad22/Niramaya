@@ -33,8 +33,8 @@
         android:layout_below="@+id/txt_app_name"
         android:hint="Email"
         android:layout_centerHorizontal="true"
-        android:background="@color/white"
-        android:padding="5dp"
+        android:background="@drawable/bluish_background"
+        android:padding="10dp"
         android:textSize="16sp"
         android:id="@+id/edt_user_email_login"
         />
@@ -46,23 +46,24 @@
         android:layout_below="@+id/edt_user_email_login"
         android:hint="Password"
         android:layout_centerHorizontal="true"
-        android:background="@color/white"
-        android:padding="5dp"
+        android:background="@drawable/bluish_background"
+        android:padding="10dp"
         android:textSize="16sp"
         android:inputType="textPassword"
         android:id="@+id/edt_user_password_login" />
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:text="Sign In"
         android:layout_below="@+id/edt_user_password_login"
         android:id="@+id/btn_user_sign_in"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:background="#1E88E5"
-        android:textColor="@color/white"/>
+        android:background="@drawable/round_backgound"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
 
 

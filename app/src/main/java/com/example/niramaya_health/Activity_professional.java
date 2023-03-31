@@ -98,11 +98,6 @@ public class Activity_professional extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        else if(id==R.id.nav_settings) {
-            Intent intent=new Intent(Activity_professional.this,MainActivity.class);
-            startActivity(intent);
-            return true;
-        }
         else if(id==R.id.nav_complete_profile)
         {
             Intent intent=new Intent(Activity_professional.this,Profile_doctor.class);

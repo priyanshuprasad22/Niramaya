@@ -9,11 +9,11 @@
 
     <ImageView
         android:layout_width="200dp"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:src="@drawable/icon"
         android:id="@+id/image_icon"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="60dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,19 +33,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_user_login"
         android:text="User login"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="380dp"
         android:layout_centerHorizontal="true"
-        android:background="@color/white"
-        android:elevation="20sp"/>
+        android:background="@drawable/bluish_background"
+        android:elevation="20sp" />
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/btn_professional_login"
         android:text="Professional login"
         android:layout_below="@+id/btn_user_login"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:background="@color/white"
+        android:background="@drawable/bluish_background"
         android:elevation="20sp"/>
     <TextView
         android:id="@+id/txt_register_from_login"
@@ -55,7 +55,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Click to Register as Medical Professional"
-        android:textColor="@color/black" />
+        android:textColor="#FFEB3B" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,6 +64,6 @@
         android:layout_below="@+id/txt_register_from_login"
         android:layout_marginTop="10dp"
         android:text="Click to Register as User"
-        android:textColor="@color/black"/>
+        android:textColor="#FFEB3B"/>
 
 </RelativeLayout>

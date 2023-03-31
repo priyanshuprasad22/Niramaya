@@ -6,9 +6,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.niramaya_health.adapters.QuestionAdapter;
 import com.example.niramaya_health.models.Question_model;
@@ -28,7 +31,7 @@ import java.util.List;
  * Use the {@link User_Symptoms#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class User_Symptoms extends Fragment {
+public class User_Symptoms extends Fragment implements TextWatcher {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,9 +43,11 @@ public class User_Symptoms extends Fragment {
     private String mParam2;
 
     ArrayList<Question_model> question_modelslist;
+    ArrayList<Question_model> filtered_list;
 
     RecyclerView recyclerView;
 
+    EditText edttext;
     public User_Symptoms() {
         // Required empty public constructor
     }
@@ -82,6 +87,11 @@ public class User_Symptoms extends Fragment {
 
         String json = null;
         question_modelslist=new ArrayList<>();
+        filtered_list=new ArrayList<>();
+
+        edttext=rootview.findViewById(R.id.user_search);
+
+        edttext.addTextChangedListener(this);
 
         try {
             InputStream is = getActivity().getAssets().open("SymptomsOutput.json"); // replace "your_file_name" with the actual name of your JSON file
@@ -162,5 +172,33 @@ public class User_Symptoms extends Fragment {
 
 
         return rootview;
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        ArrayList<Question_model> question_filterlist=new ArrayList<>();
+
+        for(Question_model question_model:question_modelslist)
+        {
+            if(question_model.getQuestion().toLowerCase().contains(charSequence.toString().toLowerCase()))
+            {
+                question_filterlist.add(question_model);
+            }
+        }
+
+        QuestionAdapter questionAdapter=new QuestionAdapter(User_Symptoms.this.getContext(),question_filterlist);
+        recyclerView.setAdapter(questionAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(User_Symptoms.this.getContext()));
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
     }
 }
