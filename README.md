@@ -83,14 +83,21 @@ implementation 'com.sun.mail:android-activation:1.6.7'
 implementation 'com.google.android.gms:play-services-auth:20.4.1'
 
  ## APP SCREENSHOTS
+ ![Screenshot_20230331-203121_Niramaya (2)](https://user-images.githubusercontent.com/111646262/229165993-e345fcb2-04a5-45ca-884d-44fe458f5dd2.jpg)
+ ![Screenshot_20230331-203127_Niramaya (2)](https://user-images.githubusercontent.com/111646262/229166087-b84b2bb1-be5b-40b7-baea-836af0223f74.jpg)
+ ![Screenshot_20230331-205032_Niramaya (5)](https://user-images.githubusercontent.com/111646262/229166166-bd372b3e-c818-4d9e-a32d-4cc03bb538c8.jpg)
 
-![Screenshot_20230331-203121_Niramaya (1)](https://user-images.githubusercontent.com/111646262/229162395-14da45c5-30a8-4ade-87a3-882c2ce9d3da.jpg)
-![Screenshot_20230331-203127_Niramaya (1)](https://user-images.githubusercontent.com/111646262/229162435-053a75e0-b697-43e1-a801-91746cf3c2f3.jpg)
-![Screenshot_20230331-203139_Niramaya (1)](https://user-images.githubusercontent.com/111646262/229163508-daa51b4c-a027-4c55-a312-8a14eb46d546.jpg)
+ ![Screenshot_20230331-203521_Niramaya (2)](https://user-images.githubusercontent.com/111646262/229166365-5d39a5f5-785e-4061-8844-5d31aaee756f.jpg)
+ ![Screenshot_20230331-203139_Niramaya (2)](https://user-images.githubusercontent.com/111646262/229167045-9b9d2ece-be51-4a66-9465-98bab342c603.jpg)
+
+ 
+ 
 
 
-![Screenshot_20230331-203521_Niramaya (1)](https://user-images.githubusercontent.com/111646262/229163562-58262385-909a-4263-9e72-1c2af5f73ee5.jpg)
-![Screenshot_20230331-205032_Niramaya (1)](https://user-images.githubusercontent.com/111646262/229163837-1fe04b80-c85c-4084-8bda-125c8b675704.jpg)
+
+
+
+
 
 
 
