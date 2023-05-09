@@ -7,9 +7,6 @@ To tackle this challenge our team "Niramaya" developed an app "NIRAMAYA".
 ## Demo Video Link:
 https://youtu.be/uHjkkC2mIM4
 
-## Presentation Link:
-
-
 ## Technology Stack:
 
 1. JAVA
